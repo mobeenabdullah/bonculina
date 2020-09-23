@@ -33,6 +33,7 @@ if ( ! function_exists( 'bonculina_setup' ) ) {
 		$hook_result = apply_filters_deprecated( 'elementor_bonculina_theme_register_menus', [ true ], '2.0', 'bonculina_register_menus' );
 		if ( apply_filters( 'bonculina_register_menus', $hook_result ) ) {
 			register_nav_menus( array( 'menu-1' => __( 'Primary', 'bonculina' ) ) );
+            register_nav_menus( array( 'menu-2' => __( 'Secondary', 'bonculina' ) ) );
 		}
 
 		$hook_result = apply_filters_deprecated( 'elementor_bonculina_theme_add_theme_support', [ true ], '2.0', 'bonculina_add_theme_support' );
@@ -85,6 +86,15 @@ if ( ! function_exists( 'bonculina_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'bonculina_setup' );
 
+if ( ! function_exists( 'add_header_after_body_open' ) ) {
+    function add_header_after_body_open() { ?>
+        <nav class="site-navigation" role="navigation">
+            <?php wp_nav_menu( array( 'theme_location' => 'menu-2' ) ); ?>
+        </nav>
+    <?php }
+}
+add_action('wp_body_open', 'add_header_after_body_open');
+
 if ( ! function_exists( 'bonculina_scripts_styles' ) ) {
 	/**
 	 * Theme Scripts & Styles.
@@ -107,7 +117,7 @@ if ( ! function_exists( 'bonculina_scripts_styles' ) ) {
 		if ( apply_filters( 'bonculina_enqueue_theme_style', true ) ) {
 			wp_enqueue_style(
 				'bonculina-theme-style',
-				get_template_directory_uri() . '/theme' . $min_suffix . '.css',
+				get_template_directory_uri() . '/theme' . '.css',
 				[],
 				BONCULINA_ELEMENTOR_VERSION
 			);
