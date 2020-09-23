@@ -397,6 +397,10 @@ to override any of the settings in this section, add your styling code in the cu
   display: block;
 }
 
+ul.stage li .added_to_cart {
+  display: none;
+}
+
 @media (max-width: 800px) {
 
   #productcontainer li:nth-child(3n) {
