@@ -90,7 +90,8 @@ if ( ! function_exists( 'add_header_after_body_open' ) ) {
     function add_header_after_body_open() { ?>
         <nav class="off-canvas-menu" id="menu-off-canvas-menu" role="navigation">
             <?php wp_nav_menu( array( 'theme_location' => 'menu-2' ) ); ?>
-        </nav>
+		</nav>
+		<a href="#" class="toggle-nav btn btn-lg btn-success" id="big-sexy"><i class="fa fa-bars"></i></a>
     <?php }
 }
 add_action('wp_body_open', 'add_header_after_body_open');

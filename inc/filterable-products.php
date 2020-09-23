@@ -7,7 +7,7 @@ function create_showfilterableprod_shortcode() {
     ob_start(); ?>
 
     <div id="productcontainer">
-        <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">Everything</button>
+        <div id="filters" class="filter-group">  <a class="button is-checked" data-filter="*">All</a>
             <?php
 
             $get_terms_args = array (
@@ -21,7 +21,7 @@ function create_showfilterableprod_shortcode() {
 
             foreach ($get_product_cats as $get_product_cat) { ?>
 
-                <button class="button" data-filter=".<?php echo $get_product_cat->name; ?>"><?php echo $get_product_cat->name; ?></button>
+                <a class="button" data-filter=".<?php echo $get_product_cat->name; ?>"><?php echo $get_product_cat->name; ?></a>                
 
             <?php }
 

@@ -17,9 +17,26 @@ var $grid = $('.stage').isotope({
 });
 
 // bind filter button click
-$('#filters').on( 'click', 'button', function() {
+$('#filters').on( 'click', 'a', function() {
 	var filterValue = $( this ).attr('data-filter');
 	// use filterFn if matches value
 	//filterValue = filterFns[ filterValue ] || filterValue;
 	$grid.isotope({ filter: filterValue });
 });
+
+
+// Off canvas Menu
+$(function() {      
+    $('.toggle-nav').click(function() {        
+        toggleNav();
+    });  
+});
+
+function toggleNav() {
+    if ($('body').hasClass('show-nav')) {        
+        $('body').removeClass('show-nav');
+    } else {
+        
+        $('body').addClass('show-nav');
+    }  
+}
