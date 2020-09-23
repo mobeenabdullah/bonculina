@@ -352,20 +352,20 @@ to override any of the settings in this section, add your styling code in the cu
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transition: all 1s;
+  transition: all .5s;
 }
 #productcontainer li figure {
   border: 3px solid #f1eeea;
-  transition: all .2s;
+  transition: all .1s;
   cursor: pointer;
   overflow: hidden;
 }
 #productcontainer li:hover {
-  transition: all .2s;
+  transition: all .1s;
 }
 #productcontainer li:hover figure {
   border: 3px solid #D3202B;
-  transition: all .2s;
+  transition: all .1s;
 }
 #productcontainer li:hover img {
   transform: scale(1.5);
