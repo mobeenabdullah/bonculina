@@ -318,16 +318,23 @@ to override any of the settings in this section, add your styling code in the cu
 #productcontainer li {
   float: left;
   height: 300px;
+  width: 194px;
   list-style: none outside none;
   position: relative;
   /* 	 */
   text-align: center;
-  margin-right: 34.2px;
+  margin-right: 37.4px;
   margin-bottom: 30px;
+}
+#productcontainer ul li .prod__content h3 {
+  margin-bottom: 0;
+  margin-top: 10px;
 }
 
 #productcontainer ul{
   overflow:hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #productcontainer ul.hidden{
@@ -338,7 +345,7 @@ to override any of the settings in this section, add your styling code in the cu
 }
 #productcontainer li figure {
   height: 194px;
-  width: 194px;
+  width: 100%;
 }
 #productcontainer li figure img {
   width: 100%;
@@ -389,3 +396,39 @@ to override any of the settings in this section, add your styling code in the cu
   color: #D3202B;
   display: block;
 }
+
+@media (max-width: 800px) {
+
+  #productcontainer li:nth-child(3n) {
+    margin-right: 0 !important;
+  }
+  #productcontainer li:nth-child(5n) {
+    margin-right: 37.4px;
+  }
+
+  #productcontainer li {
+    height: 300px;
+    width: 30.3%;
+    margin-right: 4.3%;
+}
+}
+
+@media (max-width: 768px) {
+
+  #productcontainer li:nth-child(3n) {
+    margin-right: 0 !important;
+  }
+  #productcontainer li:nth-child(5n) {
+    margin-right: 0;
+  }
+
+  #productcontainer li {
+    height: 359px;
+    width: 100%;
+    margin-right: 0;
+  }
+  #productcontainer li figure {
+    height: 250px;
+  }
+}
+
