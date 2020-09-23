@@ -7,7 +7,7 @@ function create_showfilterableprod_shortcode() {
     ob_start(); ?>
 
     <div id="productcontainer">
-        <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
+        <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">Everything</button>
             <?php
 
             $get_terms_args = array (
