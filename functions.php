@@ -88,7 +88,7 @@ add_action( 'after_setup_theme', 'bonculina_setup' );
 
 if ( ! function_exists( 'add_header_after_body_open' ) ) {
     function add_header_after_body_open() { ?>
-        <nav class="site-navigation" role="navigation">
+        <nav class="off-canvas-menu" id="menu-off-canvas-menu" role="navigation">
             <?php wp_nav_menu( array( 'theme_location' => 'menu-2' ) ); ?>
         </nav>
     <?php }
@@ -122,6 +122,10 @@ if ( ! function_exists( 'bonculina_scripts_styles' ) ) {
 				BONCULINA_ELEMENTOR_VERSION
 			);
 		}
+
+        //wp_enqueue_script('quicksand-js', get_template_directory_uri() . '/assets/js/jquery.quicksand.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
+        wp_enqueue_script('isotope-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
+		wp_enqueue_script('bonculina-custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bonculina_scripts_styles' );

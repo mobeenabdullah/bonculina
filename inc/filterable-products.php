@@ -6,13 +6,27 @@ function create_showfilterableprod_shortcode() {
 
     ob_start(); ?>
 
-    <style>
-
-
-    </style>
-
     <div id="productcontainer">
-        <nav id="filter"></nav>
+        <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
+            <?php
+
+            $get_terms_args = array (
+                'taxonomy' => 'product_cat',
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hide_empty' => true
+            );
+
+            $get_product_cats = get_terms($get_terms_args);
+
+            foreach ($get_product_cats as $get_product_cat) { ?>
+
+                <button class="button" data-filter=".<?php echo $get_product_cat->name; ?>"><?php echo $get_product_cat->name; ?></button>
+
+            <?php }
+
+            ?>
+        </div>
 
     <?php
         $products_args = array(
@@ -25,9 +39,9 @@ function create_showfilterableprod_shortcode() {
         if ( $products_loop->have_posts() ) :
             echo '<ul class="stage">';
             while ( $products_loop->have_posts() ) : $products_loop->the_post();
-            $get_product_cats = get_the_term_list(get_the_ID(), 'product_cat', '', ',', ''); ?>
+            $get_product_cats = get_the_term_list(get_the_ID(), 'product_cat', '', ' ', ''); ?>
 
-                <li data-tags="<?php echo strip_tags($get_product_cats); ?>">
+                <li class="<?php echo strip_tags($get_product_cats); ?>">
                     <figure>
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="><?php the_title(); ?>" />
                     </figure>
