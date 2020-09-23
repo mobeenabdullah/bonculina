@@ -31,7 +31,7 @@ function create_showfilterableprod_shortcode() {
                     <figure>
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="><?php the_title(); ?>" />
                     </figure>
-                    <a href="#" class="addtocartbtn">Add to Cart</a>
+                    <a href="?add-to-cart=<?php echo get_the_ID(); ?>" data-quantity="1" data-product_id="<?php echo get_the_ID(); ?>" data-product_name="<?php the_title(); ?>" class="addtocartbtn add_to_cart_button ajax_add_to_cart">Lägg i varukorg</a>
                     <div class="prod__content">
                         <h3>
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
