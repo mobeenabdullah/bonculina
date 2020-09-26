@@ -1,3 +1,7 @@
+jQuery(document).ready(function( $ ){
+	jQuery('.products .product .size-woocommerce_thumbnail').wrap('<div class="img-thumb-parent"></div>');
+});
+
 var $ = jQuery.noConflict();
 
 // init Isotope
