@@ -1,5 +1,12 @@
 jQuery(document).ready(function( $ ){
 	jQuery('.products .product .size-woocommerce_thumbnail').wrap('<div class="img-thumb-parent"></div>');
+	// is-checked
+	jQuery('#filters .button').on('click', function(){
+
+		jQuery('#filters .button').removeClass('is-checked'); 
+		jQuery(this).addClass('is-checked'); 
+	 
+	 });
 });
 
 var $ = jQuery.noConflict();

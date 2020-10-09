@@ -575,7 +575,7 @@
 
   .toggle-nav  {
     position: absolute;
-    top: 25px;
+    top: 70px;
     left: 11px;
     color: #000000 !important;
     z-index: 555556666;
@@ -584,11 +584,6 @@
     padding: 0px 15px;   
   }
 
-<<<<<<< HEAD
-  .show-nav .toggle-nav {
-    color: #444444 !important;
-  }
-=======
 .show-nav #menu-off-canvas-menu {
   -webkit-transform: translateX(300px);
   transform: translateX(300px);  
@@ -607,7 +602,6 @@
   padding-top: 100px;
   transition: all .2s;
 }
->>>>>>> aab19f83036e4bc22bfb67ba742f0bc047cb2714
 
   /* .show-nav {
     position: fixed;
