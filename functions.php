@@ -118,7 +118,7 @@ if ( ! function_exists( 'bonculina_scripts_styles' ) ) {
 		if ( apply_filters( 'bonculina_enqueue_theme_style', true ) ) {
 			wp_enqueue_style(
 				'bonculina-theme-style',
-				get_template_directory_uri() . '/theme' . '.css',
+				get_template_directory_uri() . '/theme-style' . '.css',
 				[],
 				BONCULINA_ELEMENTOR_VERSION
 			);
