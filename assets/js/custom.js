@@ -1,5 +1,6 @@
 jQuery(document).ready(function( $ ){
-	jQuery('.products .product .size-woocommerce_thumbnail').wrap('<div class="img-thumb-parent"></div>');
+	//jQuery('.products .product .size-woocommerce_thumbnail').wrap('<div class="img-thumb-parent"></div>');
+	jQuery('.products .product .wp-post-image').wrap('<div class="img-thumb-parent"></div>');
 	// is-checked
 	jQuery('#filters .button').on('click', function(){
 
