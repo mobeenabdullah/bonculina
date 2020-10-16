@@ -2530,6 +2530,16 @@ header.sticky-header {
     margin-bottom: 15px !important;
 }
 
+/* Product Detail Page */
+.single-product .default #wdapziptextbox {
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+.single-product #wdapzipsumit {
+    box-shadow: none;
+    border-radius: 6px !important;
+}
+
 
 @media (max-width: 768px) {
     .mobile-menu.sticky-header .elementor-row .logo-box {
