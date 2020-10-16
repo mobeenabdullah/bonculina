@@ -1,5 +1,23 @@
 jQuery(document).ready(function( $ ){
 	jQuery('.products .product .size-woocommerce_thumbnail').wrap('<div class="img-thumb-parent"></div>');
+    // is-checked
+	jQuery('#filters .button').on('click', function(){
+
+		jQuery('#filters .button').removeClass('is-checked'); 
+		jQuery(this).addClass('is-checked'); 
+	 
+	 });
+
+    
+     //$('.woocommerce-mini-cart__empty-message').closest('.elementor-menu-cart__main').addClass('empty_cart_sidebar');
+
+	$('#elementor-menu-cart__toggle_button').on('click', function() {
+		if($('.elementor-menu-cart__main').find('.woocommerce-mini-cart__empty-message').length > 0) {
+        	$('.elementor-menu-cart__main').addClass('empty_cart_sidebar')
+        } else {
+        	$('.elementor-menu-cart__main').removeClass('empty_cart_sidebar')
+        }
+	});
 });
 
 var $ = jQuery.noConflict();
@@ -44,3 +62,22 @@ function toggleNav() {
         $('body').addClass('show-nav');
     }  
 }
+// Add to cart notification
+$( 'a.add_to_cart_button' ).on( 'click', function() {
+	$( 'a.add_to_cart_button' ).removeClass( 'recent-added' );
+	$( this ).addClass( 'recent-added' );
+} );
+$( 'body' ).on( 'added_to_cart', function() {
+	var productName = $( '.recent-added' ).attr( 'data-product_name' );
+	if ( jsVars.noticeAddedCartText != undefined ) {
+		if ( productName != undefined ) {
+			$.growl.notice( {
+				location: 'br',
+				title: '',
+				message: productName + ' ' + jsVars.noticeAddedCartText.toLowerCase() + ' <a href="' + jsVars.noticeCartUrl + '">' + jsVars.noticeCartText + '</a>'
+			} );
+		} else {
+			$.growl.notice( {location: 'br', fixed: true, title: '', message: jsVars.noticeAddedCartText} );
+		}
+	}
+} );
