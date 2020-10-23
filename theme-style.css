@@ -702,8 +702,21 @@
            position: fixed;
            top: 25px;
       }
+
+      
+
+
+
   }
   
+
+  .woocommerce-MyAccount-navigation ul li a {
+      color: #000000;
+      font-weight: 600;
+  }
+  .woocommerce-MyAccount-navigation ul li a:hover {
+      color: var(--bcl-color-primary);
+  } 
 
 
 
@@ -2533,7 +2546,15 @@ header.sticky-header {
     font-size: 24px;
     margin: 0;
   }
-  
+
+  .product-template-default.woocommerce .related ul.products li.product {
+    width: 100% !important;
+    height: auto;
+    margin-bottom: 31px;
+    }
+    .product-template-default.woocommerce .related ul.products li.product a.add_to_cart_button {
+        position: relative;
+    }
   
   }
   
