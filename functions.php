@@ -17,7 +17,7 @@ include_once 'inc/filterable-products.php';
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.
 }
-
+define( 'BONCULINA_THEME_URI', get_template_directory_uri() );
 if ( ! function_exists( 'bonculina_setup' ) ) {
 	/**
 	 * Set up theme support.
@@ -126,7 +126,34 @@ if ( ! function_exists( 'bonculina_scripts_styles' ) ) {
 
         //wp_enqueue_script('quicksand-js', get_template_directory_uri() . '/assets/js/jquery.quicksand.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
         wp_enqueue_script('isotope-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
+		
+		/* Growl */
+        wp_enqueue_script( 'growl', BONCULINA_THEME_URI . '/assets/libs/growl/jquery.growl.js', array( 'jquery' ), null, true );
+        wp_enqueue_style( 'growl', BONCULINA_THEME_URI . '/assets/libs/growl/jquery.growl.css' );
+		
 		wp_enqueue_script('bonculina-custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
+		
+		
+
+        /* Main JS */
+        if ( class_exists( 'WooCommerce' ) ) {
+            $notice_cart_url = wc_get_cart_url();
+        } else {
+            $notice_cart_url = '/cart';
+        }
+		wp_enqueue_script('bonculina-custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), BONCULINA_ELEMENTOR_VERSION, true);
+        wp_localize_script( 'bonculina-custom-js', 'jsVars', array(
+            'ajaxUrl'                 => esc_js( admin_url( 'admin-ajax.php' ) ),
+            //'popupEnable'             => esc_js( Insight::setting( 'popup_enable' ) ),
+            //'popupReOpen'             => esc_js( Insight::setting( 'popup_reopen' ) ),
+            //'noticeCookieEnable'      => esc_js( Insight::setting( 'notice_cookie_enable' ) ),
+            'noticeCartUrl'           => esc_js( $notice_cart_url ),
+            'noticeCartText'          => esc_js( esc_html__( 'View cart', 'bonculina' ) ),
+            'noticeAddedCartText'     => esc_js( esc_html__( 'Added to cart!', 'bonculina' ) ),
+           // 'noticeAddedWishlistText' => esc_js( esc_html__( 'Added to wishlist!', 'bonculina' ) ),
+           // 'noticeCookie'            => esc_js( wp_kses( Insight::setting( 'notice_cookie_message' ), 'insight-a' ) ),
+            'noticeCookieOk'          => esc_js( esc_html__( 'Thank you! Hope you have the best experience on our website.', 'bonculina' ) ),
+        ) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bonculina_scripts_styles' );
@@ -191,4 +218,11 @@ if ( ! function_exists( 'bonculina_body_open' ) ) {
 			do_action( 'wp_body_open' );
 		}
 	}
+}
+//show details under add to cart
+add_action( 'woocommerce_after_add_to_cart_button', 'html_after_add_to_cart' );
+function html_after_add_to_cart(){
+    echo '<br/>';
+    echo '<br/>';
+    echo do_shortcode(' [sc name="usps"]');
 }
