@@ -7,6 +7,17 @@ jQuery(document).ready(function( $ ){
 		jQuery(this).addClass('is-checked'); 
 	 
 	 });
+
+	   //$('.woocommerce-mini-cart__empty-message').closest('.elementor-menu-cart__main').addClass('empty_cart_sidebar');
+
+	$('#elementor-menu-cart__toggle_button').on('click', function() {
+		if($('.elementor-menu-cart__main').find('.woocommerce-mini-cart__empty-message').length > 0) {
+        	$('.elementor-menu-cart__main').addClass('empty_cart_sidebar')
+        } else {
+        	$('.elementor-menu-cart__main').removeClass('empty_cart_sidebar')
+        }
+	});
+
 });
 
 var $ = jQuery.noConflict();
