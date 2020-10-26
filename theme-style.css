@@ -552,9 +552,10 @@
 
   
   .shopping-cart-icon .elementor-menu-cart__container .elementor-menu-cart__main {
-    height: 60vh;
+    height: fit-content;
     top: 217px;
     position: absolute;
+    padding-bottom: 50px;
   }
  .elementor-sticky--effects .shopping-cart-icon .elementor-menu-cart__container .elementor-menu-cart__main {
   top: 80px;
