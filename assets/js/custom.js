@@ -17,9 +17,21 @@ jQuery(document).ready(function( $ ){
         } else {
         	$('.elementor-menu-cart__main').removeClass('empty_cart_sidebar')
         }
-	});
+	});	
+
+
+	// Cart popup 
+	// var getCartPopupContentHeight1 = $('.widget_shopping_cart_content').height();
+	// $('.elementor-menu-cart__main').css('height', getCartPopupContentHeight1 + 100 + 'px');
+
+	// $('#elementor-menu-cart__toggle_button').on('click', function() {
+	// 	var getCartPopupContentHeight2 = $('.widget_shopping_cart_content').height();
+	// $('.elementor-menu-cart__main').css('height', getCartPopupContentHeight2 + 100 + 'px');
+	// });
 
 });
+
+
 
 var $ = jQuery.noConflict();
 
