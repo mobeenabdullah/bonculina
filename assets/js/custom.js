@@ -61,20 +61,22 @@ $('#filters').on( 'click', 'a', function() {
 
 
 // Off canvas Menu
-$(function() {      
-    $('.toggle-nav').click(function() {        
-        toggleNav();
-    });  
-});
+// $(function() {      
+//     $('.toggle-nav').click(function() {        
+//         toggleNav();
+//     });  
+// });
 
-function toggleNav() {
-    if ($('body').hasClass('show-nav')) {        
-        $('body').removeClass('show-nav');
-    } else {
+// function toggleNav() {
+//     if ($('body').hasClass('show-nav')) {        
+//         $('body').removeClass('show-nav');
+//     } else {
         
-        $('body').addClass('show-nav');
-    }  
-}
+//         $('body').addClass('show-nav');
+//     }  
+// }
+
+
 jQuery(document).ready(function( $ ){
 	jQuery('.products .product .size-woocommerce_thumbnail').wrap('<div class="img-thumb-parent"></div>');
 	jQuery('.products .product .wp-post-image').wrap('<div class="img-thumb-parent"></div>');
