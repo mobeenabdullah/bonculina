@@ -2034,6 +2034,188 @@ header.sticky-header {
     clear: both;
     display: table;
   }
+
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "FS Lucas Medium", Sans-serif !important;
+  }
+#main nav.gridlist-toggle {
+  text-align: right;
+}
+
+#main nav.gridlist-toggle a {
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    border: 1px solid #f1eeea !important;
+    background-color: transparent !important;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    color: #5e5a54;
+    cursor: pointer;
+    margin-left: 10px;
+    -webkit-transition: all 0.2s !important;
+    -moz-transition: all 0.2s !important;
+    -ms-transition: all 0.2s !important;
+    -o-transition: all 0.2s !important;
+    transition: all 0.2s !important;
+}
+#main nav.gridlist-toggle a.active {
+    background-color: var(--bcl-color-primary) !important;
+    color: #ffffff !important;
+    border-radius: 2px;
+}
+
+#main nav.gridlist-toggle a:hover {
+  background-color: var(--bcl-color-primary) !important;
+  color: #ffffff !important;
+  border-radius: 2px;
+}
+#main nav.gridlist-toggle a:nth-child(1) {
+  order: 2;
+}
+#main nav.gridlist-toggle a:nth-child(2) {
+  order: 1;
+}
+
+#main .woocommerce-products-header__title.page-title  {
+  display: none;
+}
+
+#main .woocommerce-notices-wrapper,  #main .products.columns-4,#main .woocommerce-pagination  {
+  width: 100%;
+} 
+#main .woocommerce-result-count{
+  width: 50%;
+} 
+#main .woocommerce-ordering {
+  width: 42%;
+  margin: 0;
+  text-align: right;
+} 
+#main .woocommerce-ordering select {
+  max-width: 260px;
+  display: inline-block;
+  border: 1px solid #f1eeea !important;
+}
+#main .gridlist-toggle {
+  width: 8%;
+  text-align: right;
+  margin: 0!important;
+  padding: 0 !important;
+}
+
+
+/* Lis Styling */
+#main ul.products.list, #main ul.products {
+  margin-top: 60px;
+}
+
+#main ul.products.list .add_to_cart_button, #main ul.products.list li .add_to_cart_button  {
+  position: relative !important;
+}
+
+#main ul.products.list li .img-thumb-parent img {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  height: 100%;
+  transition: all .2s !important;
+
+}
+
+#main ul.products.list li .img-thumb-parent {
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 3px solid #f1eeea;
+  width: 350px;
+  height: 350px;
+
+}
+#main ul.products.list li:hover .img-thumb-parent {
+  border: 3px solid var(--bcl-color-primary);
+
+}
+
+
+
+#main ul.products.list li:hover .img-thumb-parent img {
+  transform: scale(1.2);
+  transition: all .2s !important;
+}
+
+
+#main ul.products.list li {
+  position: relative;
+  transition: all .2s !important;
+  padding-bottom: 30px;
+    border-bottom: 1px solid #f1eeea;
+    position: relative;
+    outline: none;
+    overflow: hidden;
+}
+
+#main ul.products.list li a.woocommerce-loop-product__link {
+  display: block;
+  position: relative;
+}
+
+#main ul.products.list li a.woocommerce-loop-product__link .woocommerce-loop-product__title {
+  position: absolute;
+  top: 0;
+  left: 400px;
+  font-size: 24px !important;
+  font-weight: 700;
+}
+#main ul.products.list li a.woocommerce-loop-product__link .price {
+  position: absolute;
+  top: 50px;
+  left: 400px;
+  text-align: left;
+}
+#main ul.products.list li .woocommerce-product-details__short-description {
+  position: absolute;
+  top: 94px;
+  left: 400px;
+}
+
+#main ul.products.list li .woocommerce-product-details__short-description > p {
+  overflow: hidden;
+}
+#main ul.products.list li .woocommerce-product-details__short-description p > img {
+  width: 40px !important;
+  margin-bottom: 0 !important;
+}
+#main ul.products.list li .woocommerce-product-details__short-description p > img + p {
+  font-weight: 600;
+}
+
+#main ul.products.list li .gridlist-buttonwrap {
+  text-align: left;
+  position: relative;
+  left: 400px;
+  width: 100%;
+  top: -170px;
+} 
+
+#main ul.products.list li .gridlist-buttonwrap a {
+  position: relative !important;
+  width: auto !important;
+  opacity: 1;
+  display: inline-block;
+  text-align: left;
+  top: 0 !important;
+  border-radius: 4px;
+}
+
+#main ul.products.list li .price .woocommerce-Price-amount.amount {
+  font-size: 24px !important;
+  font-weight: 600;
+}
   
   
   
